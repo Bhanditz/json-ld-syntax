@@ -1,37 +1,42 @@
 GIT
   remote: git://github.com/ruby-rdf/json-ld.git
-  revision: a26c3205d006550f85162848a4a2bc3366b39970
+  revision: 9e94758cc0b0674ff9227cfb56f8935cbb6df89c
   branch: develop
   specs:
     json-ld (3.0.2)
+      htmlentities (~> 4.3)
+      json-canonicalization (~> 0.1)
+      link_header (~> 0.0, >= 0.0.8)
       multi_json (~> 1.13)
-      rdf (~> 3.0, >= 3.0.4)
+      rack (>= 1.6, < 3.0)
+      rdf (~> 3.0, >= 3.0.8)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     bcp47 (0.3.3)
       i18n
     builder (3.2.3)
     colorize (0.8.1)
-    concurrent-ruby (1.1.3)
+    concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     ebnf (1.1.3)
       rdf (~> 3.0)
       sxp (~> 1.0)
     equivalent-xml (0.6.0)
       nokogiri (>= 1.4.3)
-    haml (5.0.4)
+    haml (5.1.2)
       temple (>= 0.8.0)
       tilt
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     htmlentities (4.3.4)
-    i18n (1.1.1)
+    i18n (1.7.0)
       concurrent-ruby (~> 1.0)
-    json-ld-preloaded (3.0.2)
+    json-canonicalization (0.1.0)
+    json-ld-preloaded (3.0.6)
       json-ld (~> 3.0)
       multi_json (~> 1.12)
       rdf (~> 3.0)
@@ -67,17 +72,18 @@ GEM
       shex (~> 0.5, >= 0.5.2)
       sparql (~> 3.0)
       sparql-client (~> 3.0)
-    mini_portile2 (2.3.0)
-    multi_json (1.13.1)
-    net-http-persistent (3.0.0)
+    mini_portile2 (2.4.0)
+    multi_json (1.14.1)
+    net-http-persistent (3.1.0)
       connection_pool (~> 2.2)
-    nokogiri (1.8.5)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.5)
+      mini_portile2 (~> 2.4.0)
     nokogumbo (1.5.0)
       nokogiri
-    public_suffix (3.0.3)
+    public_suffix (4.0.1)
+    rack (2.0.7)
     rake (12.3.2)
-    rdf (3.0.7)
+    rdf (3.0.13)
       hamster (~> 3.0)
       link_header (~> 0.0, >= 0.0.8)
     rdf-aggregate-repo (2.2.1)
@@ -91,8 +97,10 @@ GEM
       nokogiri (~> 1.8)
       rdf (>= 2.2.8, < 4.0)
       rdf-xsd (>= 2.2, < 4.0)
-    rdf-n3 (3.0.1)
+    rdf-n3 (3.1.0)
       rdf (~> 3.0)
+      sparql (~> 3.0)
+      sxp (~> 1.0)
     rdf-normalize (0.3.3)
       rdf (>= 2.2, < 4.0)
     rdf-rdfa (3.0.1)
@@ -106,28 +114,28 @@ GEM
       rdf (>= 2.2, < 4.0)
       rdf-rdfa (>= 2.2, < 4.0)
       rdf-xsd (>= 2.2, < 4.0)
-    rdf-reasoner (0.5.1)
+    rdf-reasoner (0.5.3)
       rdf (~> 3.0)
       rdf-vocab (~> 3.0)
       rdf-xsd (~> 3.0)
-    rdf-tabular (2.2.1)
+    rdf-tabular (2.2.2)
       addressable (~> 2.3)
       bcp47 (~> 0.3, >= 0.3.3)
       json-ld (>= 2.1, < 4.0)
-      rdf (>= 2.2, < 4.0)
-      rdf-vocab (>= 2.2, < 4.0)
-      rdf-xsd (>= 2.2, < 4.0)
+      rdf (~> 3.0)
+      rdf-vocab (~> 3.0)
+      rdf-xsd (~> 3.0)
     rdf-trig (3.0.1)
       ebnf (~> 1.1)
       rdf (~> 3.0)
       rdf-turtle (~> 3.0, >= 3.0.3)
     rdf-trix (2.2.1)
       rdf (>= 2.2, < 4.0)
-    rdf-turtle (3.0.3)
+    rdf-turtle (3.0.6)
       ebnf (~> 1.1)
       rdf (~> 3.0)
-    rdf-vocab (3.0.4)
-      rdf (~> 3.0)
+    rdf-vocab (3.0.14)
+      rdf (~> 3.0, >= 3.0.11)
     rdf-xsd (3.0.1)
       rdf (~> 3.0)
     shex (0.5.2)
@@ -149,10 +157,10 @@ GEM
     sparql-client (3.0.1)
       net-http-persistent (>= 2.9, < 4)
       rdf (~> 3.0)
-    sxp (1.0.1)
-      rdf (>= 2.2, < 4.0)
-    temple (0.8.0)
-    tilt (2.0.9)
+    sxp (1.0.2)
+      rdf (~> 3.0)
+    temple (0.8.2)
+    tilt (2.0.10)
 
 PLATFORMS
   ruby
@@ -160,10 +168,10 @@ PLATFORMS
 DEPENDENCIES
   colorize
   json-ld!
-  linkeddata
-  nokogiri
-  nokogumbo
+  linkeddata (>= 3.0.1)
+  nokogiri (>= 1.10.5)
+  nokogumbo (>= 1.5.0)
   rake
 
 BUNDLED WITH
-   1.17.1
+   1.17.3
