@@ -76,7 +76,7 @@ GEM
     nokogumbo (1.5.0)
       nokogiri
     public_suffix (3.0.3)
-    rake (12.3.2)
+    rake (13.0.1)
     rdf (3.0.7)
       hamster (~> 3.0)
       link_header (~> 0.0, >= 0.0.8)
@@ -163,7 +163,7 @@ DEPENDENCIES
   linkeddata
   nokogiri
   nokogumbo
-  rake
+  rake (>= 12.3.3)
 
 BUNDLED WITH
-   1.17.1
+   1.17.3
