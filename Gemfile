@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
 gem 'json-ld', github: 'ruby-rdf/json-ld', branch: 'develop'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.18.3'
 gem 'nokogumbo'
-gem 'linkeddata'
+gem 'linkeddata', '>= 3.2.0'
 gem 'colorize'
 gem 'rake'
